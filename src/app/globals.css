@@ -1,0 +1,67 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Design tokens — see DESIGN.md notes in docs/decisions/ADR-0004. */
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, monospace;
+
+  --color-brand-50: #f0fdfa;
+  --color-brand-100: #ccfbf1;
+  --color-brand-200: #99f6e4;
+  --color-brand-300: #5eead4;
+  --color-brand-400: #2dd4bf;
+  --color-brand-500: #14b8a6;
+  --color-brand-600: #0d9488;
+  --color-brand-700: #0f766e;
+  --color-brand-800: #115e59;
+  --color-brand-900: #134e4a;
+
+  --color-canvas: #f7f9f9;
+  --color-surface: #ffffff;
+  --color-border-subtle: #e5e9ea;
+  --color-ink: #0f172a;
+  --color-ink-muted: #52616b;
+  --color-ink-subtle: #7b8a93;
+
+  --color-success: #15803d;
+  --color-success-surface: #f0fdf4;
+  --color-warning: #b45309;
+  --color-warning-surface: #fffbeb;
+  --color-danger: #be123c;
+  --color-danger-surface: #fff1f2;
+  --color-info: #0369a1;
+  --color-info-surface: #f0f9ff;
+
+  --radius-card: 0.75rem;
+  --shadow-card: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 1px 3px 0 rgb(15 23 42 / 0.06);
+  --shadow-raised: 0 8px 24px -12px rgb(15 23 42 / 0.25);
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  :focus-visible {
+    outline: 2px solid var(--color-brand-600);
+    outline-offset: 2px;
+  }
+  /* Financial figures align in columns. */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

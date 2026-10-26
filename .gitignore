@@ -1,0 +1,38 @@
+# Dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+.vercel/
+
+# Environment files (never commit real values)
+.env
+.env.*
+!.env.example
+!.env.test.example
+
+# Local secrets and operator scratch scripts. The generator itself is part of
+# the repository (package.json wires `pnpm secrets:generate` to it).
+.secrets/
+scripts/local/*
+!scripts/local/generate-secrets.mjs
+
+# Backups and database dumps
+backups/
+*.dump
+*.sql.gz
+*.pem
+*.key
+
+# Test artifacts
+coverage/
+playwright-report/
+test-results/
+
+# Editor / OS
+.DS_Store
+*.log
+
+# TypeScript incremental build info
+*.tsbuildinfo

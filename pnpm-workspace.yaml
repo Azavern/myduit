@@ -1,0 +1,11 @@
+# Konfigurasi pnpm untuk proyek ini.
+# pnpm memblokir build script dependency secara default. `onlyBuiltDependencies`
+# mengizinkan paket yang memang perlu langkah build native. `strictDepBuilds:
+# false` membuat sisa script yang diabaikan menjadi peringatan, bukan kegagalan
+# instalasi (binari native tooling sudah tersedia lewat optional dependency).
+onlyBuiltDependencies:
+  - "@tailwindcss/oxide"
+  - esbuild
+  - sharp
+  - unrs-resolver
+strictDepBuilds: false
